@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Keyboard</title>
 </head>
 <body>
@@ -177,7 +178,7 @@
                     </div>
                     <div class="keyboard__button">
                         <span class="keyboard__button-rus">\</span>
-                        <span class="keyboard__button-eng">| /</span>
+                        <span class="keyboard__button-eng">/</span>
                     </div>
                     <div class="keyboard__button">
                         <span class="keyboard__button-rus">я</span>
@@ -212,12 +213,12 @@
                         <span class="keyboard__button-eng">,</span>
                     </div>
                     <div class="keyboard__button">
-                        <span class="keyboard__button-rus">с</span>
+                        <span class="keyboard__button-rus">ю</span>
                         <span class="keyboard__button-eng">.</span>
                     </div>
                     <div class="keyboard__button">
                         <span class="keyboard__button-rus">.</span>
-                        <span class="keyboard__button-eng">/</span>
+                        <span class="keyboard__button-eng">?</span>
                     </div>
                     <div class="keyboard__button">
                         <span class="keyboard__button-rus">up</span>
@@ -261,6 +262,30 @@
             
                 </div>
             </div>
+            <ul class="keyboard__menu">
+                <li class="keyboard__change-lang" id="change-lang">
+                    <i class="fa-solid fa-language"></i>
+                </li>
+                <li class="keyboard__change-theme" id="change-theme">
+                    <i class="fa-solid fa-moon"></i>
+                </li>
+                <li class="keyboard__settings" id="settings">
+                    <i class="fa-solid fa-gear"></i>
+                </li>
+            </ul>
+        </div>
+        <div class="panel" id="panel">
+            <div class="panel__cross" id="panel-cross"><i class="fa-solid fa-xmark"></i></div>
+            <p class="panel__title">Settings</p>
+            <ul class="panel__menu-settings">
+                <li class="panel__item">
+                    <p class="panel__item-title">Font Size</p>
+                    <div class="panel__item-input">
+                        <input class="input" type="range" name="" id="input-range"min="5" max="50" value="20" step="1">
+                        <p class="panel__item-value" id="input-value"></p>
+                    </div>
+                </li>
+            </ul>
         </div>
     </section>
 
