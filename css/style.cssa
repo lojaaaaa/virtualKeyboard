@@ -5,6 +5,7 @@
 }
 a{
     text-decoration: none;
+    color: inherit;
 }
 ul{
     list-style: none;
@@ -13,6 +14,8 @@ body{
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(26, 26, 26);
+    color: white;
+    overflow: hidden;
 }
 textarea:focus, input:focus{
     outline: none;
@@ -22,6 +25,7 @@ textarea:focus, input:focus{
     max-width: 1200px;
     padding: 0 15px;
     padding-top: 100px;
+    position: relative;
 }
 .keyboard__text{
     width: 100%;
@@ -31,6 +35,13 @@ textarea:focus, input:focus{
     border: 5px solid rgb(51, 51, 51);
     color: white;
     font-size: 20px;
+    padding: 20px;
+    line-height: 1.5;
+    resize: none;
+}
+.keyboard__text--active{
+    background-color: rgb(51, 51, 51);
+    border: 5px solid rgba(100, 100, 100, 0.954);
 }
 .keyboard__buttons{
     display: flex;
@@ -63,6 +74,9 @@ textarea:focus, input:focus{
 .keyboard__row:nth-child(5){
     grid-template-columns:  1fr 1fr 1fr 5fr repeat(5, 1fr);
 }
+
+
+
 .caps{
     position: relative;
 }
@@ -105,6 +119,89 @@ textarea:focus, input:focus{
     opacity: .7;
 }
 
+.keyboard__menu{
+    position: absolute;
+    right: 2%;
+    top: 8%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.keyboard__change-lang, .keyboard__settings, .keyboard__change-theme{
+    cursor: pointer;
+    font-size: 30px;
+    color: rgba(51, 51, 51, 1);
+}
+.keyboard__change-lang--active, .keyboard__settings--active, .keyboard__change-theme--active{
+    color: rgb(141, 141, 141);
+}
+
+.panel{
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all .3s;
+    padding: 50px 20px;
+    z-index: 20px;
+}
+.panel--active{
+    right: -0%;
+}
+.panel__title{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+.panel__cross{
+    position: absolute;
+    right: 5%;
+    top: 10px;
+    cursor: pointer;
+    font-size: 32px;
+    color: rgb(161, 161, 161);
+}
+.panel__item{
+    margin-bottom: 25px;
+}
+.panel__item-title{
+    margin-bottom: 10px;
+    display: block;
+}
+.panel__item-input{
+
+    background-color: rgb(26, 26, 26);
+    padding: 20px 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.panel__item-input input{
+    -webkit-appearance: none;
+    width: 200px;
+    height: 2px;
+    background: rgb(161, 161, 161);
+    border: none;
+    outline: none
+}
+
+
+.panel__item-value{
+    margin-left: 10px;
+}
+
+
+
+/* @media(max-width: 1800px){
+    .keyboard__settings--active{
+        color: rgba(51, 51, 51, 1);
+    }
+} */
+
 @media(max-width: 990px){
     .keyboard__row{
         display: grid;
@@ -115,6 +212,25 @@ textarea:focus, input:focus{
         flex-direction: column;
         gap: 3px;
         font-size: 13px;
+    }
+    .keyboard__button-eng{
+        font-weight: 300;
+        position: absolute;
+        left: 15%;
+        top: 5%;
+        font-size: 10px;
+    }
+}
+@media(max-width: 700px){
+    .keyboard__row{
+        display: grid;
+        gap: 2px;
+    }
+    .keyboard__buttons{
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        font-size: 8px;
     }
     .keyboard__button-eng{
         font-weight: 300;
